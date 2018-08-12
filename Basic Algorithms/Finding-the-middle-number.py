@@ -19,15 +19,16 @@ def DP (arr):
     num2 = arr[-1]
     num3 = arr[-1]/2
 
-    if (num2 <= num1 <= num3):
-        if (num1 <= num2 <= num3):
+    if (num2 <= num1 <= num3):              # O(1)
+        if (num1 <= num2 <= num3):          # O(1)
             return num3
         else:
             return num2
     return num1
 
-
+# Total = O(1)
 
 arr = [1,2,3,4,5]
 ans = DP(arr)
 print(ans)
+

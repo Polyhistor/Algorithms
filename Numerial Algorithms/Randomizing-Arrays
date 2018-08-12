@@ -1,0 +1,31 @@
+# A function to randomize an array
+
+# RandomizeArray (String: array[])
+#    Integer: max_i = <Upper bound of array>
+#    For i = 0 to max_i - 1
+#       // Pick the item for position i in the array
+#       Integer: j = <pseudorandom number between i and max_i inclusive>
+#       <Swap the values of array[i] and array[j]>
+#    Next i
+# End RandomizeArray
+
+import random
+
+def shuffle_array(arr):
+
+    length = len(arr)
+    swap = random.choice(arr)
+
+    for i in range(length):                            # O(N)
+        arr[i], array[swap] = array[swap], arr[i]      # O(1)
+
+
+# Total O(N)
+
+array = list(range(2))
+print(array)
+
+shuffle_array(array)
+print(array)
+
+

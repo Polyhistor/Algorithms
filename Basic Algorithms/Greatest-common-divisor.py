@@ -1,5 +1,4 @@
 # Find the great common divisor of a and b
-# GCD (a, b) = GDC (b, a MOD b).
 
 # Integer: GCD(Integer:a, Integer: b)
 

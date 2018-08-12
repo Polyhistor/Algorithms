@@ -13,11 +13,13 @@ def FL(arr,n):
 
     max = arr[0]
 
-    for i in range(1,n):
-        if (arr[i] > max):
-            max = arr[i]
+    for i in range(1,n):    #O(N)
+        if (arr[i] > max):  #O(1)
+            max = arr[i]    #O(1)
 
     return max
+
+#Total O(N)
 
 arr = [1,2,3]
 n = len(arr)
