@@ -10,6 +10,22 @@
 import numpy as np
 
 def RaisetoPower(a,p):
-    while ( a + 1 > p ):
-        np.exp(a.exp(2))
+    print(a , p)
+    if ( p==0 ):
+        return 1
+
+    elif ( p == 1 ):
+        return a
+
+    elif ( p % 2 == 0 ):
+        a = RaisetoPower(a,p/2)          # O(log (p))
+        return a * a
+
+    else:
+        return a * RaisetoPower(a,p-1)
+
+
+
+print(RaisetoPower(2,9))
+
         
