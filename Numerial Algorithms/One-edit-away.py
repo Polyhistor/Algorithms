@@ -7,7 +7,8 @@ def on_edit_away(str1, str2):
     j = 0
 
     for i in range(len(str1)):
-
+        print("this is I", i)
+        print("this is J", j)
         if(j == len(str2)):
             counter +=1
         elif (str1[i] != str2[j]):
