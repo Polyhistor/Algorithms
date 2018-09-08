@@ -69,46 +69,49 @@ class doubly_linked_list:
         cur = cur.next
 
 
-    def delete(self, key):
+    def delete(self,key):
         cur = self.head
         while cur:
-            if cur.data == key and cur == self.head:
-                # Case 1: (There's only one node)
-                if not cur.next:
-                    cur = None
+            if  cur.data == key and cur == self.head:
+                if cur.next is None:
+                    # case 1 : we have only one node
+                    cur= None
                     self.head = None
                     return
-
-                # Case 2: (There are two nodes)
                 else:
-                    nxt = cur.next
+                    # case 2 : we have two nodes
+                    next = cur.next
+                    next.prev = None
                     cur.next = None
-                    nxt.prev = None
                     cur = None
-                    self.head = nxt
+                    self.head = next
                     return
 
-            elif cur.data == key:
-                # Case 3: (There are many nodes ;) )
+            elif cur.data ==key:
                 if cur.next:
-                    nxt = cur.next
-                    prev = cur.prev
-                    prev.next = nxt
-                    nxt.prev = prev
+                    # case 3 : we have too many nodes
+                    next = cur.next
+                    previ = cur.prev
+                    next.prev = cur.prev
+                    previ.next = cur.next
                     cur.next = None
                     cur.prev = None
                     cur = None
                     return
 
-                # Case 4: (There are many nodes ;) )
                 else:
-                    prev = cur.prev
-                    prev.next = None
+                    # case 4 : we have too many nodes and we want to delete the last one
+                    previ = cur.prev
+                    previ.next = None
                     cur.prev = None
                     cur = None
                     return
 
             cur = cur.next
+
+
+
+
 
 
 
