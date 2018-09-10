@@ -18,6 +18,7 @@ class linked_list:
         # cur.next = new_node
 
     def append_first(self,data):
+
         cur = self.head
         new_node = node(data)
 
@@ -30,6 +31,7 @@ class linked_list:
 
 
     def append_last(self,data):
+
         new_node = node(data)
 
         if self.tail is None:
@@ -47,11 +49,11 @@ class linked_list:
         idx = 0
 
         while cur.next is not None:
+            last_node = cur
             cur = cur.next
-            if (idx + 1 == index):
-                removed = cur.next
-                cur.next = removed.next
-
+            if (idx  == index):
+                last_node.next = cur.next
+                return
             idx += 1
 
     # fix find biggest in empty list

@@ -4,6 +4,7 @@ class node:
         self.next = None
 
 class linked_list:
+
     def __init__(self):
         self.head = node()
 
@@ -11,7 +12,7 @@ class linked_list:
         cur = self.head
         new_node = node(data)
 
-        while (cur.next != None):
+        while cur.next is not None:
             cur = cur.next
 
         cur.next = new_node
@@ -85,9 +86,6 @@ class linked_list:
                 new_node.next = afterme.next
                 afterme.next = new_node
             idx +=1
-
-    
-
 
 
 
