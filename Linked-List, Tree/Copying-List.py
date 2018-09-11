@@ -8,14 +8,14 @@ class linked_list:
         self.head = node()
         self.tail = None
 
-    # def append(self, data):
-    #     cur = self.head
-    #     new_node = node(data)
+    def append(self, data):
+        cur = self.head
+        new_node = node(data)
 
-        # while cur.next != None:
-        #     cur = cur.next
+        while cur.next != None:
+            cur = cur.next
 
-        # cur.next = new_node
+        cur.next = new_node
 
     def append_first(self,data):
 
@@ -42,8 +42,6 @@ class linked_list:
             self.tail = new_node
 
 
-
-    # fix lost tail
     def erase(self,index):
         cur = self.head
         idx = 0
@@ -56,18 +54,22 @@ class linked_list:
                 return
             idx += 1
 
-    # fix find biggest in empty list
+
     def find_biggest(self):
         cur = self.head
-        largest = cur.next.data
+
+        if (cur.next == None):
+            print("There's nothing in the list")
 
         while cur.next is not None:
+            largest = cur.next.data
             cur = cur.next
 
             if ( largest < cur.data):
                 largest = cur.data
+                return largest
 
-        return largest
+
 
     def copy_reverse(self):
         cur = self.head
@@ -78,6 +80,7 @@ class linked_list:
             new_list.append_first(cur.data)
 
         return new_list
+
 
     def copy(self):
         cur = self.head
@@ -112,3 +115,21 @@ print(ans)
 
 ans2 = my_list.copy()
 print(ans2.display())
+
+my_list.erase(0)
+ans = my_list.display()
+print(ans)
+
+my_list.erase(0)
+ans = my_list.display()
+print(ans)
+
+my_list.erase(0)
+ans = my_list.display()
+print(ans)
+
+my_list.erase(0)
+ans = my_list.display()
+print(ans)
+
+my_list.find_biggest()
