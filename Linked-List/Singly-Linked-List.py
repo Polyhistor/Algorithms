@@ -89,6 +89,8 @@ class linked_list:
 
 
 
+
+
 my_list = linked_list()
 
 my_list.append(1)
